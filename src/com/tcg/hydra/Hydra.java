@@ -11,7 +11,7 @@ public class Hydra extends JFrame {
 
 	public Hydra(WindowListener manager) {
 		Random r = new Random();
-		int width = 200;
+		int width = 212;
 		int height = 200;
 		int widthDim = Toolkit.getDefaultToolkit().getScreenSize().width - width - 10;
 		int heightDim = Toolkit.getDefaultToolkit().getScreenSize().height - height - 50;
@@ -23,6 +23,8 @@ public class Hydra extends JFrame {
 		
 		JPanel p = new JPanel();
 		
+		JScrollPane pane = new JScrollPane();
+		
 		JTextArea text = new JTextArea(10, 16);
 		
 		text.setEditable(false);
@@ -31,7 +33,9 @@ public class Hydra extends JFrame {
 		
 		setResizable(false);
 		
-		add(p);
+		pane.setViewportView(p);
+		
+		getContentPane().add(pane);
 		
 		setTitle("lol scrub");
 		
